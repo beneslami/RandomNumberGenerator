@@ -27,7 +27,7 @@ def prepare_first(kernels_list, level):
 
 
 if __name__ == "__main__":
-    level = "level2"
+    level = "level3"
     path =   "/home/ben/Desktop/benchmarks/"
     kernels_list = {"SDK": {"conjugate-gradient": [2, 3]},
                     "pannotia": {"color-max": [1],
@@ -51,7 +51,8 @@ if __name__ == "__main__":
         for bench, k_list in kernels_list[suite].items():
             model_path = path + suite + "/" + bench + "/ring/NVLink4/4chiplet/model/"
             for kernel in k_list:
+                print(bench + str(kernel))
                 model_file = model_path + str(kernel) + "/burst_model_" + level + ".json"
                 save_path = path + suite + "/" + bench + "/ring/NVLink4/4chiplet/data/" + str(kernel) + "/synthetic/" + level
-                command = "./level2/model.exe " + model_file + " " + save_path
+                command = "./"+ level + "/model.exe " + model_file + " " + save_path
                 os.system(command)
