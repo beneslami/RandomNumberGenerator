@@ -51,7 +51,6 @@ if __name__ == "__main__":
         for bench, k_list in kernels_list[suite].items():
             model_path = path + suite + "/" + bench + "/ring/NVLink4/4chiplet/model/"
             for kernel in k_list:
-                print(bench + str(kernel))
                 model_file = model_path + str(kernel) + "/burst_model_" + level + ".json"
                 save_path = path + suite + "/" + bench + "/ring/NVLink4/4chiplet/data/" + str(kernel) + "/synthetic/" + level
                 command = "./"+ level + "/model.exe " + model_file + " " + save_path
