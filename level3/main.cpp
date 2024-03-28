@@ -25,6 +25,7 @@ int main(int argc, char **argv){
     while(i <= 10000000) {
         if(flag == 0){
             int dur = traffic->generate_burst_duration("req");
+            std::cout << dur << std::endl;
             int vol = traffic->generate_burst_volume("req", dur);
             intensity.push_back((double)vol/dur);
             temporal.push_back((double)vol/dur);
